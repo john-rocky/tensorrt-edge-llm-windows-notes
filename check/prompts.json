@@ -1,0 +1,53 @@
+{
+ "prompts": [
+  {
+   "id": "fact_paris",
+   "text": "What is the capital of France? Answer in one word.",
+   "expect": [
+    "Paris"
+   ]
+  },
+  {
+   "id": "fact_spider",
+   "text": "How many legs does a spider have? Answer with a number.",
+   "expect": [
+    "8",
+    "eight"
+   ]
+  },
+  {
+   "id": "fact_gold",
+   "text": "What is the chemical symbol for gold?",
+   "expect": [
+    "Au"
+   ]
+  },
+  {
+   "id": "fact_tokyo_ja",
+   "text": "日本の首都はどこですか？一言で答えてください。",
+   "expect": [
+    "東京"
+   ]
+  },
+  {
+   "id": "gpu",
+   "text": "Explain in two sentences what a GPU is.",
+   "expect": []
+  },
+  {
+   "id": "haiku",
+   "text": "Write a haiku about autumn.",
+   "expect": []
+  },
+  {
+   "id": "colors",
+   "text": "List the three primary colors of light.",
+   "expect": []
+  },
+  {
+   "id": "code_factorial",
+   "text": "Write a Python function that returns the factorial of n.",
+   "expect": []
+  }
+ ]
+}
