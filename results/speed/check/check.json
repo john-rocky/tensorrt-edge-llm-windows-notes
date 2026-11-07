@@ -1,0 +1,27 @@
+{
+ "prompt_ids_same": true,
+ "prompt_tokens_edge": 19,
+ "prompt_tokens_ref": 19,
+ "edge_generated": 128,
+ "ref_generated": 128,
+ "finish_reason": "max-length",
+ "identical": true,
+ "first_divergence": null,
+ "ref_top2_gap_at_div": null,
+ "edge_top2_gap_at_div": null,
+ "edge_text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't",
+ "ref_text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't",
+ "ref_meta": {
+  "model": "models\\Qwen3-0.6B",
+  "dtype": "float16",
+  "device": "cuda",
+  "torch": "2.13.0+cu130",
+  "transformers": "5.14.1",
+  "eos_token_id": [
+   151645,
+   151643
+  ],
+  "max_new_tokens": 128,
+  "gpu": "NVIDIA GeForce RTX 5080 Laptop GPU"
+ }
+}

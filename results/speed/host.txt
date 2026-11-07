@@ -1,0 +1,17 @@
+date: 2026-11-07T17:23:23.6468178+09:00
+os: Microsoft Windows 11 Home 25H2 build 26200.9711
+machine: Micro-Star International Co., Ltd. Stealth 16 AI+ B3WI
+cpu: Intel(R) Core(TM) Ultra 9 386H (16 cores, 16 logical)
+ram_bytes: 33840689152
+gpu: NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, 98.03.89.00.09, 16303 MiB, 125.00 W, 3090 MHz, 14001 MHz
+power_scheme_guid: 381b4222-f694-41f0-9685-ff5bb260df2e
+ac: PowerOnline=True
+tensorrt_rtx_dll: 1.7.1.116 (C:\src\msf\m3\trtrtx\TensorRT-RTX-1.7.1.116)
+edge_llm_commit: 358de11c7c5f30fdaac75f0726a3b2df7e842778 (v0.11.1)
+nvcc: Cuda compilation tools, release 13.5, V13.5.37
+cudart: 6,14,11,13050
+llama_cuda: version: 0.7.0-dev (build 11721, commit ff5a23376) / built with Clang 20.1.8 for Windows x86_64
+llama_vulkan: version: 0.7.0-dev (build 11721, commit ff5a23376) / built with Clang 20.1.8 for Windows x86_64
+llama_cuda_cudart: 6,14,11,13040
+q4_k_m: 396705472 bytes sha256 AC2D97712095A558E31573F62F466A3F9D93990898B0EC79D7C974C1780D524A
+model_revision: Qwen/Qwen3-0.6B c1899de289a04d12100db370d81485cdf75e47ca

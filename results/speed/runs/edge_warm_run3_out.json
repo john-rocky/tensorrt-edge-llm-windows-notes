@@ -1,0 +1,27 @@
+{
+    "input_file": "C:\\src\\msf\\m10\\work\\short_chat.json",
+    "responses": [
+        {
+            "batch_idx": 0,
+            "finish_reason": "max-length",
+            "formatted_complete_request": "<|im_start|>user\nExplain what on-device AI means in simple terms.<|im_end|>\n<|im_start|>assistant\n",
+            "formatted_system_prompt": "",
+            "generated_token_count": 128,
+            "messages": [
+                {
+                    "content": [
+                        {
+                            "text": "Explain what on-device AI means in simple terms.",
+                            "type": "text"
+                        }
+                    ],
+                    "role": "user"
+                }
+            ],
+            "output_text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't",
+            "request_idx": 0,
+            "spec_acceptance_length": 0.0,
+            "spec_verify_count": 0
+        }
+    ]
+}

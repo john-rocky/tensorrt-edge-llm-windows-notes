@@ -1,0 +1,921 @@
+{
+ "timed": {
+  "cuda_q4": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 49.84,
+     "prefill_tps": 381.24,
+     "gen_tokens": 128,
+     "decode_ms": 275.03,
+     "decode_tps": 461.76,
+     "bracket": [
+      381.2,
+      461.8
+     ],
+     "name": "cuda_q4_run1",
+     "elapsed_s": 3.51,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 1,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 46, 2707 MHz, 14001 MHz, 17.57 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:01:36.1568015+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 21.25,
+     "prefill_tps": 894.24,
+     "gen_tokens": 128,
+     "decode_ms": 255.41,
+     "decode_tps": 497.25,
+     "bracket": [
+      894.2,
+      497.2
+     ],
+     "name": "cuda_q4_run2",
+     "elapsed_s": 1.333,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 8,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 47, 225 MHz, 14001 MHz, 17.66 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:02:18.0778007+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 22.0,
+     "prefill_tps": 863.71,
+     "gen_tokens": 128,
+     "decode_ms": 249.89,
+     "decode_tps": 508.23,
+     "bracket": [
+      863.7,
+      508.2
+     ],
+     "name": "cuda_q4_run3",
+     "elapsed_s": 1.347,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 5,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 47, 172 MHz, 14001 MHz, 17.77 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:02:57.4378139+09:00"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 878.98,
+    "prefill_tps_spread_pct": 3.47,
+    "prefill_ms": 21.62,
+    "prefill_ms_spread_pct": 3.47,
+    "decode_tps": 502.74,
+    "decode_tps_spread_pct": 2.18
+   }
+  },
+  "edge_cold": {
+   "runs": [
+    {
+     "name": "edge_cold_run1",
+     "prompt_tokens": 19,
+     "prefill_ms": 87.75398254394531,
+     "prefill_tps": 216.51438903808594,
+     "gen_tokens": 128,
+     "decode_tps": 250.18898010253906,
+     "decode_steps": 127,
+     "decode_gpu_ms": 511.61322021484375,
+     "step_median_ms": 3.525023937225342,
+     "wall_ms": 646.1159,
+     "decode_tps_wall": 229.24199519762934,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 7,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 48, 165 MHz, 14001 MHz, 17.88 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:03:37.0658217+09:00",
+     "finish": "max-length",
+     "generated_token_count": 128,
+     "text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't"
+    },
+    {
+     "name": "edge_cold_run2",
+     "prompt_tokens": 19,
+     "prefill_ms": 20.670175552368164,
+     "prefill_tps": 919.1987915039062,
+     "gen_tokens": 128,
+     "decode_tps": 280.68902587890625,
+     "decode_steps": 127,
+     "decode_gpu_ms": 456.02069091796875,
+     "step_median_ms": 3.5942399501800537,
+     "wall_ms": 478.7675,
+     "decode_tps_wall": 279.4166068407862,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 5,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 49, 16132 MHz, 14001 MHz, 17.99 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:04:29.6039515+09:00",
+     "finish": "max-length",
+     "generated_token_count": 128,
+     "text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't"
+    },
+    {
+     "name": "edge_cold_run3",
+     "prompt_tokens": 19,
+     "prefill_ms": 18.507104873657227,
+     "prefill_tps": 1026.6328125,
+     "gen_tokens": 128,
+     "decode_tps": 306.95758056640625,
+     "decode_steps": 127,
+     "decode_gpu_ms": 416.9957275390625,
+     "step_median_ms": 3.5185279846191406,
+     "wall_ms": 437.3864,
+     "decode_tps_wall": 305.5772903776314,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 3,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 49, 30 MHz, 14001 MHz, 18.01 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:05:10.1752885+09:00",
+     "finish": "max-length",
+     "generated_token_count": 128,
+     "text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 972.92,
+    "prefill_tps_spread_pct": 11.04,
+    "prefill_ms": 19.59,
+    "prefill_ms_spread_pct": 11.04,
+    "decode_tps": 293.82,
+    "decode_tps_spread_pct": 8.94,
+    "decode_tps_wall": 292.5,
+    "decode_tps_wall_spread_pct": 8.94
+   }
+  },
+  "edge_warm": {
+   "runs": [
+    {
+     "name": "edge_warm_run1",
+     "prompt_tokens": 19,
+     "prefill_ms": 12.099616050720215,
+     "prefill_tps": 1570.2977294921875,
+     "gen_tokens": 128,
+     "decode_tps": 384.4819030761719,
+     "decode_steps": 127,
+     "decode_gpu_ms": 332.9155578613281,
+     "step_median_ms": 2.6119039058685303,
+     "wall_ms": 346.4925,
+     "decode_tps_wall": 382.78326526653854,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 6,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 50, 247 MHz, 14001 MHz, 18.10 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:05:50.6290086+09:00",
+     "finish": "max-length",
+     "generated_token_count": 128,
+     "text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't"
+    },
+    {
+     "name": "edge_warm_run2",
+     "prompt_tokens": 19,
+     "prefill_ms": 9.200384140014648,
+     "prefill_tps": 2065.131103515625,
+     "gen_tokens": 128,
+     "decode_tps": 368.6615295410156,
+     "decode_steps": 127,
+     "decode_gpu_ms": 347.2019348144531,
+     "step_median_ms": 2.73091197013855,
+     "wall_ms": 357.8491,
+     "decode_tps_wall": 367.1317121712957,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 9,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 50, 21480 MHz, 14001 MHz, 18.12 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:06:31.4276139+09:00",
+     "finish": "max-length",
+     "generated_token_count": 128,
+     "text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't"
+    },
+    {
+     "name": "edge_warm_run3",
+     "prompt_tokens": 19,
+     "prefill_ms": 8.961343765258789,
+     "prefill_tps": 2120.217529296875,
+     "gen_tokens": 128,
+     "decode_tps": 369.38970947265625,
+     "decode_steps": 127,
+     "decode_gpu_ms": 346.51751708984375,
+     "step_median_ms": 2.728447914123535,
+     "wall_ms": 356.9421,
+     "decode_tps_wall": 367.8364326378256,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 7,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 50, 532 MHz, 14001 MHz, 18.20 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:07:12.2410298+09:00",
+     "finish": "max-length",
+     "generated_token_count": 128,
+     "text": "<think>\nOkay, the user is asking for an explanation of on-device AI in simple terms. Let me start by recalling what I know about AI. On-device AI refers to AI models that run on a device rather than a cloud. So, the main idea is that the AI doesn't rely on external servers or the internet.\n\nWait, but I should make sure I'm not mixing this with other terms. Maybe the user is confused between on-device and off-device AI. Let me clarify. On-device AI is when the AI model is trained and deployed directly on the device, like a smartphone or tablet. This means the model doesn't"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 2092.67,
+    "prefill_tps_spread_pct": 2.63,
+    "prefill_ms": 9.08,
+    "prefill_ms_spread_pct": 2.63,
+    "decode_tps": 369.03,
+    "decode_tps_spread_pct": 0.2,
+    "decode_tps_wall": 367.48,
+    "decode_tps_wall_spread_pct": 0.19
+   }
+  },
+  "cuda_f16": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 171.7,
+     "prefill_tps": 110.66,
+     "gen_tokens": 128,
+     "decode_ms": 404.75,
+     "decode_tps": 313.77,
+     "bracket": [
+      110.7,
+      313.8
+     ],
+     "name": "cuda_f16_run1",
+     "elapsed_s": 3.414,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 6,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 150 MHz, 14001 MHz, 18.25 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:07:53.0470075+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 61.6,
+     "prefill_tps": 308.45,
+     "gen_tokens": 128,
+     "decode_ms": 395.59,
+     "decode_tps": 321.04,
+     "bracket": [
+      308.5,
+      321.0
+     ],
+     "name": "cuda_f16_run2",
+     "elapsed_s": 2.135,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 4,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 12937 MHz, 14001 MHz, 18.37 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:08:34.4750418+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 58.12,
+     "prefill_tps": 326.9,
+     "gen_tokens": 128,
+     "decode_ms": 393.62,
+     "decode_tps": 322.64,
+     "bracket": [
+      326.9,
+      322.6
+     ],
+     "name": "cuda_f16_run3",
+     "elapsed_s": 2.175,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 3,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 0 MHz, 14001 MHz, 18.28 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:09:14.6610783+09:00"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 317.67,
+    "prefill_tps_spread_pct": 5.81,
+    "prefill_ms": 59.86,
+    "prefill_ms_spread_pct": 5.81,
+    "decode_tps": 321.84,
+    "decode_tps_spread_pct": 0.5
+   }
+  },
+  "vulkan_f16": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 20.6,
+     "prefill_tps": 922.33,
+     "gen_tokens": 128,
+     "decode_ms": 529.19,
+     "decode_tps": 239.99,
+     "bracket": [
+      922.3,
+      240.0
+     ],
+     "name": "vulkan_f16_run1",
+     "elapsed_s": 4.788,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 7,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 150 MHz, 14001 MHz, 18.22 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:10:31.1393833+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 14.35,
+     "prefill_tps": 1323.86,
+     "gen_tokens": 128,
+     "decode_ms": 408.0,
+     "decode_tps": 311.28,
+     "bracket": [
+      1323.9,
+      311.3
+     ],
+     "name": "vulkan_f16_run2",
+     "elapsed_s": 2.709,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 21,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 262 MHz, 14001 MHz, 18.33 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:11:13.9691935+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 14.69,
+     "prefill_tps": 1293.84,
+     "gen_tokens": 128,
+     "decode_ms": 404.55,
+     "decode_tps": 313.93,
+     "bracket": [
+      1293.8,
+      313.9
+     ],
+     "name": "vulkan_f16_run3",
+     "elapsed_s": 2.92,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 4,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 210 MHz, 14001 MHz, 18.26 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:12:00.1014199+09:00"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 1308.85,
+    "prefill_tps_spread_pct": 2.29,
+    "prefill_ms": 14.52,
+    "prefill_ms_spread_pct": 2.34,
+    "decode_tps": 312.61,
+    "decode_tps_spread_pct": 0.85
+   }
+  },
+  "cuda_q4_end": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 22.01,
+     "prefill_tps": 863.17,
+     "gen_tokens": 128,
+     "decode_ms": 240.13,
+     "decode_tps": 528.87,
+     "bracket": [
+      863.2,
+      528.9
+     ],
+     "name": "cuda_q4_end_run1",
+     "elapsed_s": 1.461,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 10,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 232 MHz, 14001 MHz, 18.40 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:12:41.0970190+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 21.82,
+     "prefill_tps": 870.76,
+     "gen_tokens": 128,
+     "decode_ms": 262.66,
+     "decode_tps": 483.51,
+     "bracket": [
+      870.8,
+      483.5
+     ],
+     "name": "cuda_q4_end_run2",
+     "elapsed_s": 1.496,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 8,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 2002 MHz, 14001 MHz, 18.35 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:13:20.6428003+09:00"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 25.58,
+     "prefill_tps": 742.71,
+     "gen_tokens": 128,
+     "decode_ms": 256.9,
+     "decode_tps": 494.35,
+     "bracket": [
+      742.7,
+      494.4
+     ],
+     "name": "cuda_q4_end_run3",
+     "elapsed_s": 1.482,
+     "exit": 0,
+     "gate": "quiet",
+     "cpu_before": 10,
+     "gpu_before": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 1072 MHz, 14001 MHz, 18.20 W, 0 %, 0 MiB",
+     "start": "2026-11-07T18:14:00.2516785+09:00"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 806.74,
+    "prefill_tps_spread_pct": 15.87,
+    "prefill_ms": 23.7,
+    "prefill_ms_spread_pct": 15.86,
+    "decode_tps": 488.93,
+    "decode_tps_spread_pct": 2.22
+   }
+  }
+ },
+ "bench": {
+  "bench_llama_cpu": {
+   "runs": [
+    {
+     "prompt_tokens": null,
+     "prefill_ms": 24.77,
+     "prefill_ms_derived": true,
+     "prefill_tps": 767.1,
+     "gen_tokens": null,
+     "decode_ms": null,
+     "decode_tps": 119.7,
+     "bracket": [
+      767.1,
+      119.7
+     ],
+     "record_prefill_tps": 767.1,
+     "record_decode_tps": 119.7,
+     "rawLog": "host-logs/20261107-035730-1b8778/r02_run1.log",
+     "timestamp": "2026-11-06T19:03:42Z",
+     "firstEver": null,
+     "engine": "b11721-win-cpu-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": null,
+     "prefill_ms": 24.82,
+     "prefill_ms_derived": true,
+     "prefill_tps": 765.4,
+     "gen_tokens": null,
+     "decode_ms": null,
+     "decode_tps": 122.1,
+     "bracket": [
+      765.4,
+      122.1
+     ],
+     "record_prefill_tps": 765.4,
+     "record_decode_tps": 122.1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r02_run2.log",
+     "timestamp": "2026-11-06T19:04:25Z",
+     "firstEver": null,
+     "engine": "b11721-win-cpu-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": null,
+     "prefill_ms": 23.89,
+     "prefill_ms_derived": true,
+     "prefill_tps": 795.4,
+     "gen_tokens": null,
+     "decode_ms": null,
+     "decode_tps": 107.0,
+     "bracket": [
+      795.4,
+      107.0
+     ],
+     "record_prefill_tps": 795.4,
+     "record_decode_tps": 107.0,
+     "rawLog": "host-logs/20261107-035730-1b8778/r02_run3.log",
+     "timestamp": "2026-11-06T19:05:08Z",
+     "firstEver": null,
+     "engine": "b11721-win-cpu-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 3,
+    "prefill_tps": 767.1,
+    "prefill_tps_spread_pct": 3.91,
+    "prefill_ms": 24.77,
+    "prefill_ms_spread_pct": 3.75,
+    "decode_tps": 119.7,
+    "decode_tps_spread_pct": 12.61
+   }
+  },
+  "bench_llama_vulkan_q4": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 12.92,
+     "prefill_tps": 1470.25,
+     "gen_tokens": 128,
+     "decode_ms": 269.28,
+     "decode_tps": 471.63,
+     "bracket": [
+      1470.2,
+      471.6
+     ],
+     "record_prefill_tps": 1470.2,
+     "record_decode_tps": 471.6,
+     "rawLog": "host-logs/20261107-035730-1b8778/r03_run1.log",
+     "timestamp": "2026-11-06T19:05:51Z",
+     "firstEver": true,
+     "engine": "b11721-win-vulkan-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 12.43,
+     "prefill_tps": 1529.18,
+     "gen_tokens": 128,
+     "decode_ms": 260.43,
+     "decode_tps": 487.66,
+     "bracket": [
+      1529.2,
+      487.7
+     ],
+     "record_prefill_tps": 1529.2,
+     "record_decode_tps": 487.7,
+     "rawLog": "host-logs/20261107-035730-1b8778/r03_run2.log",
+     "timestamp": "2026-11-06T19:06:34Z",
+     "firstEver": null,
+     "engine": "b11721-win-vulkan-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 12.76,
+     "prefill_tps": 1489.14,
+     "gen_tokens": 128,
+     "decode_ms": 262.24,
+     "decode_tps": 484.28,
+     "bracket": [
+      1489.1,
+      484.3
+     ],
+     "record_prefill_tps": 1489.1,
+     "record_decode_tps": 484.3,
+     "rawLog": "host-logs/20261107-035730-1b8778/r03_run3.log",
+     "timestamp": "2026-11-06T19:07:17Z",
+     "firstEver": null,
+     "engine": "b11721-win-vulkan-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 1509.16,
+    "prefill_tps_spread_pct": 2.65,
+    "prefill_ms": 12.59,
+    "prefill_ms_spread_pct": 2.62,
+    "decode_tps": 485.97,
+    "decode_tps_spread_pct": 0.7
+   }
+  },
+  "bench_llama_cuda_q4": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 22.0,
+     "prefill_tps": 863.68,
+     "gen_tokens": 128,
+     "decode_ms": 252.09,
+     "decode_tps": 503.78,
+     "bracket": [
+      863.7,
+      503.8
+     ],
+     "record_prefill_tps": 863.7,
+     "record_decode_tps": 503.8,
+     "rawLog": "host-logs/20261107-035730-1b8778/r04_run1.log",
+     "timestamp": "2026-11-06T19:07:59Z",
+     "firstEver": true,
+     "engine": "b11721-win-cuda-13.4-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 21.29,
+     "prefill_tps": 892.27,
+     "gen_tokens": 128,
+     "decode_ms": 262.45,
+     "decode_tps": 483.9,
+     "bracket": [
+      892.3,
+      483.9
+     ],
+     "record_prefill_tps": 892.3,
+     "record_decode_tps": 483.9,
+     "rawLog": "host-logs/20261107-035730-1b8778/r04_run2.log",
+     "timestamp": "2026-11-06T19:09:18Z",
+     "firstEver": null,
+     "engine": "b11721-win-cuda-13.4-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 23.25,
+     "prefill_tps": 817.27,
+     "gen_tokens": 128,
+     "decode_ms": 261.9,
+     "decode_tps": 484.91,
+     "bracket": [
+      817.3,
+      484.9
+     ],
+     "record_prefill_tps": 817.3,
+     "record_decode_tps": 484.9,
+     "rawLog": "host-logs/20261107-035730-1b8778/r04_run3.log",
+     "timestamp": "2026-11-06T19:10:00Z",
+     "firstEver": null,
+     "engine": "b11721-win-cuda-13.4-x64",
+     "file": "Qwen3-0.6B-Q4_K_M.gguf",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 854.77,
+    "prefill_tps_spread_pct": 8.77,
+    "prefill_ms": 22.27,
+    "prefill_ms_spread_pct": 8.8,
+    "decode_tps": 484.4,
+    "decode_tps_spread_pct": 0.21
+   }
+  },
+  "bench_litert_cpu_first": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 1522.8330999999998,
+     "prefill_tps": 12.48,
+     "gen_tokens": 128,
+     "decode_ms": 12028.7109,
+     "decode_tps": 10.64,
+     "record_prefill_tps": 12.48,
+     "record_decode_tps": 10.64,
+     "iteration": 1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r00_run1.log",
+     "timestamp": "2026-11-06T18:57:50Z",
+     "firstEver": true,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 1039.865,
+     "prefill_tps": 18.27,
+     "gen_tokens": 128,
+     "decode_ms": 9611.7578,
+     "decode_tps": 13.32,
+     "record_prefill_tps": 18.27,
+     "record_decode_tps": 13.32,
+     "iteration": 1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r00_run2.log",
+     "timestamp": "2026-11-06T18:59:07Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 1067.4305,
+     "prefill_tps": 17.8,
+     "gen_tokens": 128,
+     "decode_ms": 10139.1899,
+     "decode_tps": 12.62,
+     "record_prefill_tps": 17.8,
+     "record_decode_tps": 12.62,
+     "iteration": 1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r00_run3.log",
+     "timestamp": "2026-11-06T19:00:20Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 18.04,
+    "prefill_tps_spread_pct": 2.61,
+    "prefill_ms": 1053.65,
+    "prefill_ms_spread_pct": 2.62,
+    "decode_tps": 12.97,
+    "decode_tps_spread_pct": 5.4
+   }
+  },
+  "bench_litert_cpu_second": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 2284.3406,
+     "prefill_tps": 8.32,
+     "gen_tokens": 128,
+     "decode_ms": 11893.2102,
+     "decode_tps": 10.76,
+     "record_prefill_tps": 8.32,
+     "record_decode_tps": 10.76,
+     "iteration": 2,
+     "rawLog": "host-logs/20261107-035730-1b8778/r00_run1.log",
+     "timestamp": "2026-11-06T18:57:50Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 2232.047,
+     "prefill_tps": 8.51,
+     "gen_tokens": 128,
+     "decode_ms": 11222.5807,
+     "decode_tps": 11.41,
+     "record_prefill_tps": 8.51,
+     "record_decode_tps": 11.41,
+     "iteration": 2,
+     "rawLog": "host-logs/20261107-035730-1b8778/r00_run2.log",
+     "timestamp": "2026-11-06T18:59:07Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 2197.1132,
+     "prefill_tps": 8.65,
+     "gen_tokens": 128,
+     "decode_ms": 12180.140800000001,
+     "decode_tps": 10.51,
+     "record_prefill_tps": 8.65,
+     "record_decode_tps": 10.51,
+     "iteration": 2,
+     "rawLog": "host-logs/20261107-035730-1b8778/r00_run3.log",
+     "timestamp": "2026-11-06T19:00:20Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 8.58,
+    "prefill_tps_spread_pct": 1.63,
+    "prefill_ms": 2214.58,
+    "prefill_ms_spread_pct": 1.58,
+    "decode_tps": 10.96,
+    "decode_tps_spread_pct": 8.21
+   }
+  },
+  "bench_litert_gpu_first": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 171.7502,
+     "prefill_tps": 110.63,
+     "gen_tokens": 128,
+     "decode_ms": 592.9054,
+     "decode_tps": 215.89,
+     "record_prefill_tps": 110.63,
+     "record_decode_tps": 215.89,
+     "iteration": 1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r01_run1.log",
+     "timestamp": "2026-11-06T19:01:32Z",
+     "firstEver": true,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 295.6613,
+     "prefill_tps": 64.26,
+     "gen_tokens": 128,
+     "decode_ms": 586.562,
+     "decode_tps": 218.22,
+     "record_prefill_tps": 64.26,
+     "record_decode_tps": 218.22,
+     "iteration": 1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r01_run2.log",
+     "timestamp": "2026-11-06T19:02:14Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 255.2137,
+     "prefill_tps": 74.45,
+     "gen_tokens": 128,
+     "decode_ms": 590.38,
+     "decode_tps": 216.81,
+     "record_prefill_tps": 74.45,
+     "record_decode_tps": 216.81,
+     "iteration": 1,
+     "rawLog": "host-logs/20261107-035730-1b8778/r01_run3.log",
+     "timestamp": "2026-11-06T19:02:58Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 69.36,
+    "prefill_tps_spread_pct": 14.69,
+    "prefill_ms": 275.44,
+    "prefill_ms_spread_pct": 14.68,
+    "decode_tps": 217.51,
+    "decode_tps_spread_pct": 0.65
+   }
+  },
+  "bench_litert_gpu_second": {
+   "runs": [
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 17.5227,
+     "prefill_tps": 1084.31,
+     "gen_tokens": 128,
+     "decode_ms": 278.1866,
+     "decode_tps": 460.12,
+     "record_prefill_tps": 1084.31,
+     "record_decode_tps": 460.12,
+     "iteration": 2,
+     "rawLog": "host-logs/20261107-035730-1b8778/r01_run1.log",
+     "timestamp": "2026-11-06T19:01:32Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 17.1259,
+     "prefill_tps": 1109.43,
+     "gen_tokens": 128,
+     "decode_ms": 281.092,
+     "decode_tps": 455.37,
+     "record_prefill_tps": 1109.43,
+     "record_decode_tps": 455.37,
+     "iteration": 2,
+     "rawLog": "host-logs/20261107-035730-1b8778/r01_run2.log",
+     "timestamp": "2026-11-06T19:02:14Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    },
+    {
+     "prompt_tokens": 19,
+     "prefill_ms": 16.6009,
+     "prefill_tps": 1144.52,
+     "gen_tokens": 128,
+     "decode_ms": 278.186,
+     "decode_tps": 460.12,
+     "record_prefill_tps": 1144.52,
+     "record_decode_tps": 460.12,
+     "iteration": 2,
+     "rawLog": "host-logs/20261107-035730-1b8778/r01_run3.log",
+     "timestamp": "2026-11-06T19:02:58Z",
+     "firstEver": null,
+     "engine": "v0.19.0",
+     "file": "Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm",
+     "text_check": "PASS"
+    }
+   ],
+   "row": {
+    "n": 2,
+    "prefill_tps": 1126.97,
+    "prefill_tps_spread_pct": 3.11,
+    "prefill_ms": 16.86,
+    "prefill_ms_spread_pct": 3.11,
+    "decode_tps": 457.75,
+    "decode_tps_spread_pct": 1.04
+   }
+  }
+ },
+ "problems": []
+}

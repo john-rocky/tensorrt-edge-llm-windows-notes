@@ -1,0 +1,17 @@
+{
+    "name": "edge_warm_run3",
+    "series": "edge_warm",
+    "run": 3,
+    "start": "2026-11-07T18:07:12.2410298+09:00",
+    "exitCode": 0,
+    "command": "EDGELLM_PLUGIN_PATH=C:\\src\\msf\\m3\\src\\TensorRT-Edge-LLM\\b2\\NvInfer_edgellm_plugin.dll C:\\src\\msf\\m3\\src\\TensorRT-Edge-LLM\\b2\\examples\\llm\\llm_inference.exe --engine-dir \"C:\\src\\msf\\m10\\work\\engines\\llm\" --input-file \"C:\\src\\msf\\m10\\work\\short_chat.json\" --output-file \"C:\\src\\msf\\m10\\results\\timed2\\edge_warm_run3_out.json\" --dump-profile --profile-output-file \"C:\\src\\msf\\m10\\results\\timed2\\edge_warm_run3_profile.json\" --warmup 1",
+    "workingDirectory": "C:\\src\\msf\\m10\\work",
+    "before": {
+        "quietGate": "quiet",
+        "cpuBusyPercent": 7,
+        "netBytesPerSec": 0,
+        "diskBytesPerSec": 206843,
+        "gpu": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 50, 532 MHz, 14001 MHz, 18.20 W, 0 %, 0 MiB"
+    },
+    "gpuAfter": "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 56, 2325 MHz, 14001 MHz, 55.09 W, 80 %, 0 MiB"
+}

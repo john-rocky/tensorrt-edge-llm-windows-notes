@@ -1,0 +1,19 @@
+{
+    "name":  "cuda_q4_end_run1",
+    "series":  "cuda_q4_end",
+    "run":  1,
+    "start":  "2026-11-07T18:12:41.0970190+09:00",
+    "end":  "2026-11-07T18:12:42.5591157+09:00",
+    "elapsedSeconds":  1.461,
+    "exitCode":  0,
+    "command":  "C:\\Users\\USER\\bench\\engines\\llama-cuda\\llama-cli.exe -lv 4 -m \"C:\\Users\\USER\\models\\Qwen3-0.6B-Q4_K_M.gguf\" -c 2048 -f \"C:\\src\\msf\\m10\\work\\short-chat.txt\" -n 128 --temp 0 --top-p 1 -st -ngl 99 -fa on",
+    "workingDirectory":  "C:\\Users\\USER\\bench\\engines\\llama-cuda",
+    "before":  {
+                   "quietGate":  "quiet",
+                   "cpuBusyPercent":  10,
+                   "netBytesPerSec":  0,
+                   "diskBytesPerSec":  0,
+                   "gpu":  "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 232 MHz, 14001 MHz, 18.40 W, 0 %, 0 MiB"
+               },
+    "gpuAfter":  "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 57, 2340 MHz, 14001 MHz, 34.37 W, 76 %, 0 MiB"
+}

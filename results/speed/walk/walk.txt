@@ -1,0 +1,4 @@
+README blocks 10 and 11, run once as written on the machine in the README, 2026-11-07 19:32 to 19:40 JST.
+block 10 exit code: 0
+block 11 exit code: 0
+block 11 printed: prompt ids equal: True (19 tokens), generated: Edge-LLM 128, transformers 128, same ids: True

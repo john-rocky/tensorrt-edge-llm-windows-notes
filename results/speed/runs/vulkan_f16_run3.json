@@ -1,0 +1,19 @@
+{
+    "name":  "vulkan_f16_run3",
+    "series":  "vulkan_f16",
+    "run":  3,
+    "start":  "2026-11-07T18:12:00.1014199+09:00",
+    "end":  "2026-11-07T18:12:03.0286546+09:00",
+    "elapsedSeconds":  2.92,
+    "exitCode":  0,
+    "command":  "GGML_VK_VISIBLE_DEVICES=0 C:\\Users\\USER\\bench\\engines\\llama-gpu\\llama-cli.exe -lv 4 -m \"C:\\src\\msf\\m10\\models\\Qwen3-0.6B-F16.gguf\" -c 2048 -f \"C:\\src\\msf\\m10\\work\\short-chat.txt\" -n 128 --temp 0 --top-p 1 -st -ngl 99 -fa on",
+    "workingDirectory":  "C:\\Users\\USER\\bench\\engines\\llama-gpu",
+    "before":  {
+                   "quietGate":  "quiet",
+                   "cpuBusyPercent":  4,
+                   "netBytesPerSec":  0,
+                   "diskBytesPerSec":  44838,
+                   "gpu":  "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P0, 51, 210 MHz, 14001 MHz, 18.26 W, 0 %, 0 MiB"
+               },
+    "gpuAfter":  "NVIDIA GeForce RTX 5080 Laptop GPU, 591.74, P2, 52, 1485 MHz, 11001 MHz, 52.75 W, 0 %, 0 MiB"
+}
