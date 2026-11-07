@@ -146,8 +146,9 @@ TensorRT-Edge-LLM\build\examples\llm\llm_inference.exe --help
 
 The three `*_FLAGS_INIT` options are not in the upstream guide. They make MSVC read the sources as UTF-8. Without
 them, on this machine (Windows set to Japanese, ANSI code page 932) MSVC reads a UTF-8 character in xgrammar's
-`tokenizer_info.cc` as Shift-JIS and stops with `error C2001` (newline in constant), and it warns C4819 on two Edge-LLM
-headers. On a machine with code page 1252 the build may pass without them (not tried here).
+`tokenizer_info.cc` as Shift-JIS and stops with `error C2001` (newline in string literal). With `-- -k 0` the rest of
+the build warns C4819 on 179 files (at main 4022297f). On a machine with code page 1252 the build may pass without them
+(not tried here). Reported upstream: https://github.com/NVIDIA/TensorRT-Edge-LLM/issues/277.
 
 The build puts the plugin `NvInfer_edgellm_plugin.dll` in `build` and the tools in `build\examples\llm`. On Windows
 the `llm_stream` example is not built.
@@ -389,7 +390,7 @@ edge-llm-bench's own text check passed on every run of its rows (its records).
 |---|---|---|
 | 2 | The Edge-LLM support matrix names TensorRT RTX 1.7.1.80, which is on neither NVIDIA's download page (its 1.7 row offers 1.7.1.116 only) nor PyPI. | TensorRT for RTX 1.7.1.116 for CUDA 13.4. |
 | 1, 5, 7 | The CUDA 13 zips put the runtime DLLs (`cudart64_13.dll`, `nvrtc64_130_0.dll`, `nvrtc-builtins64_135.dll`) in `cuda\bin\x64`, not in `cuda\bin`. | Put both folders on `PATH`. |
-| 5 | On Windows set to Japanese (code page 932), MSVC stops in xgrammar's `tokenizer_info.cc` with `error C2001` (newline in constant). | `/utf-8` through the three `*_FLAGS_INIT` options in a new build folder. |
+| 5 | On Windows set to Japanese (code page 932), MSVC stops in xgrammar's `tokenizer_info.cc` with `error C2001` (newline in string literal). | `/utf-8` through the three `*_FLAGS_INIT` options in a new build folder. |
 
 ## Licences
 
