@@ -1,5 +1,7 @@
 # TensorRT Edge-LLM on Windows with TensorRT for RTX (build notes)
 
+This repository is independent work. It is not sponsored or endorsed by NVIDIA.
+
 Steps and scripts to build [NVIDIA TensorRT Edge-LLM](https://github.com/NVIDIA/TensorRT-Edge-LLM) v0.11.1 from
 source on Windows x64 with TensorRT for RTX, and to run one model through it: export
 [Qwen/Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B) to ONNX, build the engine, generate text, and compare the
@@ -13,12 +15,12 @@ capability 12.0, 16 GB, driver 591.74), Visual Studio 2022 Build Tools (MSVC 19.
 Result on that machine (2026-11-07): the build passed, and for all 8 prompts of the check (step 9) Edge-LLM's
 greedy output had the same token ids as transformers fp16 (`results/check.md`). That check comes from one run of the
 nine PowerShell blocks below, as written and in order, in an empty folder on that machine (the blocks of commit
-42941fd, unchanged since); every block exited 0. pip's cache on that machine already held most of the Python wheels
-from earlier runs.
+42941fd, unchanged since); every block exited 0. Steps 6 and 9 took most of their Python wheels from pip's cache,
+left on that machine by earlier runs; step 4 downloads its wheels every time (`--no-cache-dir`).
 
-This repository holds no NVIDIA binaries. TensorRT for RTX comes from NVIDIA's download page under the NVIDIA
-TensorRT for RTX License Agreement, and CUDA from NVIDIA's redistributable archives: step 1 downloads the CUDA parts,
-and in step 2 you download TensorRT for RTX yourself.
+This repository holds no NVIDIA binaries and no TensorRT engines. Step 1 downloads the CUDA parts from NVIDIA's
+redistributable archives. In step 2 you download TensorRT for RTX yourself from NVIDIA's page, under the NVIDIA
+TensorRT for RTX License Agreement. Step 7 builds the engine on your machine.
 Performance numbers are not part of these notes.
 
 ## What you need
@@ -61,8 +63,8 @@ foreach ($part in "cuda_nvcc", "libnvvm", "cuda_crt", "cuda_cudart", "cuda_nvrtc
 .\cuda\bin\nvcc.exe --version
 ```
 
-CUDA 13 places its runtime DLLs in `cuda\bin\x64` (`cuda\bin` holds `nvcc.exe` and the other tools), so the later
-blocks put both folders on `PATH`.
+CUDA 13 places its runtime DLLs in `cuda\bin\x64` (`cuda\bin` holds `nvcc.exe` and the other tools). Steps 4 and 5
+put both folders on `PATH`; steps 7 and 8, which only run the tools, put `cuda\bin\x64` on it.
 
 ## 2. TensorRT for RTX 1.7.1
 
