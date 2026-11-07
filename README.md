@@ -11,19 +11,26 @@ Machine of the run recorded here: Windows 11 Home (26200), Core Ultra 9 386H, Ge
 capability 12.0, 16 GB, driver 591.74), Visual Studio 2022 Build Tools (MSVC 19.44).
 
 Result on that machine (2026-11-07): the build passed, and for all 8 prompts of the check (step 9) Edge-LLM's
-greedy output had the same token ids as transformers fp16 (`results/check.md`). WALK_SENTENCE
+greedy output had the same token ids as transformers fp16 (`results/check.md`). That check comes from one run of the
+nine PowerShell blocks below, as written and in order, in an empty folder on that machine (the blocks of commit
+42941fd, unchanged since); every block exited 0. pip's cache on that machine already held most of the Python wheels
+from earlier runs.
 
 This repository holds no NVIDIA binaries. TensorRT for RTX comes from NVIDIA's download page under the NVIDIA
-TensorRT for RTX License Agreement, and CUDA from NVIDIA's redistributable archives; the steps download both.
+TensorRT for RTX License Agreement, and CUDA from NVIDIA's redistributable archives: step 1 downloads the CUDA parts,
+and in step 2 you download TensorRT for RTX yourself.
 Performance numbers are not part of these notes.
 
 ## What you need
 
-- Windows 10 or 11 x64 and an NVIDIA RTX GPU with a driver that supports CUDA 13 (this run: 591.74, which
-  `nvidia-smi` reports as CUDA 13.1; the CUDA 13.5 parts below run on it through CUDA minor version compatibility).
+- Windows 10 or 11 x64 (this run: Windows 11) and an NVIDIA RTX GPU with a driver that supports CUDA 13 (this run:
+  591.74, which `nvidia-smi` reports as CUDA 13.1; the CUDA 13.5 parts below run on it through CUDA minor version
+  compatibility). Only compute capability 12.0 was tried. The CuTe DSL kernels of step 4 list compute capabilities
+  8.0 to 12.1 (8.6 Ampere, 8.9 Ada Lovelace, 12.0 Blackwell), not 7.5 (Turing).
 - Visual Studio 2022 with the C++ build tools (the Build Tools edition is enough).
 - Git, Python 3.12 with the `py` launcher, and CMake 3.20 or newer on `PATH`.
-- DISK_LINE
+- About 13 GB of free disk space for the folder (12.4 GB after step 9), plus room for pip's download cache, which
+  pip keeps outside the folder (the PyTorch wheel of step 9 alone is 1.9 GB).
 
 Open PowerShell in an empty folder, clone this repository into it
 (`git clone https://github.com/john-rocky/tensorrt-edge-llm-windows-notes.git`; steps 8 and 9 use its `check`
@@ -32,9 +39,9 @@ folder: a block sets everything it needs.
 
 ## 1. CUDA 13.5 from NVIDIA's redistributable archives
 
-The CUDA Toolkit installer can also install a display driver. This step takes only the parts the build needs from
-the [redistributable archives](https://developer.download.nvidia.com/compute/cuda/redist/) (zip files, checked
-against the sha256 in NVIDIA's manifest) into `.\cuda`. It does not touch the driver.
+Instead of the CUDA Toolkit installer, this step takes only the parts the build needs from the
+[redistributable archives](https://developer.download.nvidia.com/compute/cuda/redist/) (zip files, checked against the
+sha256 in NVIDIA's manifest) into `.\cuda`. It does not touch the display driver.
 
 ```powershell
 $ErrorActionPreference = "Stop"
@@ -61,8 +68,9 @@ blocks put both folders on `PATH`.
 
 Download `tensorrt-rtx-1.7.1.116-windows-amd64-cuda-13.4-release-external.zip` from
 <https://developer.nvidia.com/tensorrt-rtx> (TensorRT for RTX 1.7, Windows, CUDA 13.4). The page states that
-downloading and using the software means agreeing to the NVIDIA TensorRT for RTX License Agreement. Save the zip in
-this folder, then:
+downloading and using the software means agreeing to the NVIDIA TensorRT for RTX License Agreement. NVIDIA's
+prerequisites page says the download needs an NVIDIA Developer Program membership; on 2026-11-07 the link downloaded
+without signing in. Save the zip in this folder, then:
 
 ```powershell
 $ErrorActionPreference = "Stop"
@@ -90,7 +98,9 @@ git -C TensorRT-Edge-LLM rev-parse HEAD
 ## 4. CuTe DSL kernels
 
 The CMake build links kernels that `kernelSrcs\build_cutedsl.py` compiles ahead of time. The repository ships no
-Windows artifact, so this step generates it for the GPU (`sm_120` here; use your GPU's compute capability).
+Windows artifact, so this step generates it for the GPU (`sm_120` here). For another GPU, put its compute capability
+in the four places that say `sm_120` or `120`: twice in this block and twice in the cmake line of step 5 (not tried
+here).
 
 ```powershell
 $ErrorActionPreference = "Stop"
@@ -109,8 +119,9 @@ Get-ChildItem TensorRT-Edge-LLM\cpp\kernels\cuteDSLArtifact\windows\x86_64\sm_12
 `build_cutedsl.py` needs `lib.exe` (from the Visual Studio x64 environment, `vcvars64.bat`) and `nvcc` on `PATH`. The
 folder it writes holds `cutedsl_x86_64.lib`, the headers and `metadata.json`.
 
-Each new environment first updates pip. The pip that comes with Python 3.12.10 (25.0.1) does not resume a broken
-download, and the PyTorch wheel in step 9 is 1.9 GB.
+Each new environment first updates pip. The pip that comes with Python 3.12.10 (25.0.1) cannot resume a broken
+download. pip 26.3 resumes one up to 5 times by default (`--resume-retries`), which helps with the 1.9 GB PyTorch
+wheel in step 9.
 
 ## 5. Build
 
@@ -151,7 +162,7 @@ if ($LASTEXITCODE -ne 0) { throw "the export failed" }
 Get-ChildItem work\onnx\llm
 ```
 
-The export runs on the CPU and writes fp16 ONNX with Edge-LLM's custom ops to `work\onnx\llm`.
+The export runs on the CPU and writes fp16 ONNX to `work\onnx\llm`.
 
 ## 7. Build the engine
 
@@ -163,6 +174,11 @@ TensorRT-Edge-LLM\build\examples\llm\llm_build.exe --onnx-dir work\onnx\llm --en
 if ($LASTEXITCODE -ne 0) { throw "llm_build failed" }
 Get-ChildItem work\engines\llm
 ```
+
+For each of the model's 28 attention layers, `llm_build` prints two TensorRT warnings that the attributes
+`xqa_jit_kernels` and `supports_bounded_kv_cache` are not found in the plugin node and that "the engine may fail to
+build". The engine builds: the v0.11.1 attention plugin reads a missing `supports_bounded_kv_cache` as 0 and a missing
+`xqa_jit_kernels` as empty (`cpp/plugins/attentionPlugin/attentionPlugin.cpp`, lines 688 and 721).
 
 ## 8. Generate
 
@@ -202,18 +218,20 @@ if ($LASTEXITCODE -ne 0) { throw "compare.py failed" }
 
 `compare.py` checks first that both sides fed the model the same prompt token ids (it re-tokenizes the
 `formatted_complete_request` that `llm_inference` reports). It then compares the generated ids prompt by prompt, and
-prints the table and the verdict (`PASS` = at least 7 of 8 prompts agree, no empty answer). Where a prompt parts ways,
+prints the table and the verdict (`PASS` = at least 7 of 8 prompts agree, no empty answer, and the prompt ids are
+equal on all 8). Where a prompt parts ways,
 the table gives the first differing step and the gap between the two most likely tokens there on each side.
 
 ## Problems met
 
 | Step | What happened | What worked |
 |---|---|---|
-| 2 | The Edge-LLM support matrix names TensorRT RTX 1.7.1.80. Its download URLs return HTTP 404, and NVIDIA's page lists 1.7.1.116 for 1.7. | TensorRT for RTX 1.7.1.116 for CUDA 13.4. |
+| 2 | The Edge-LLM support matrix names TensorRT RTX 1.7.1.80, which is on neither NVIDIA's download page (its 1.7 row offers 1.7.1.116 only) nor PyPI. | TensorRT for RTX 1.7.1.116 for CUDA 13.4. |
 | 1, 5, 7 | The CUDA 13 zips put the runtime DLLs (`cudart64_13.dll`, `nvrtc64_130_0.dll`, `nvrtc-builtins64_135.dll`) in `cuda\bin\x64`, not in `cuda\bin`. | Put both folders on `PATH`. |
 | 5 | On Windows set to Japanese (code page 932), MSVC stops in xgrammar's `tokenizer_info.cc` with `error C2001` (newline in constant). | `/utf-8` through the three `*_FLAGS_INIT` options in a new build folder. |
 
 ## Licences
 
 The scripts and notes here: MIT (`LICENSE`). TensorRT Edge-LLM: Apache-2.0. TensorRT for RTX: NVIDIA TensorRT for RTX
-License Agreement. CUDA: NVIDIA CUDA Toolkit End User License Agreement. Qwen3-0.6B: Apache-2.0.
+License Agreement. CUDA: the CUDA Toolkit End User License Agreement (the `LICENSE.txt` in each archive; NVIDIA's
+manifest marks cccl's as "CCCL EULA"). Qwen3-0.6B: Apache-2.0.
